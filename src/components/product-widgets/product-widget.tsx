@@ -2,7 +2,9 @@
 
 import { Product } from "@/app/models/product";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 import { useState } from "react";
+import { Checkbox } from "../ui/checkbox";
 
 type ProductProps = {
   product: Product;
@@ -35,9 +37,20 @@ export default function ProductWidget({ product }: ProductProps) {
           "text-gs-white rounded-md w-full p-3"
         )}
       >
-        <div className="flex flex-col justify-start items-start">
-          <span className="text-sm">{`This product ${product.action} `}</span>
-          <span className="font-semibold text-xl">{`${product.amount} ${product.type}`}</span>
+        <div className="flex flex-row">
+          <div className="mr-4">
+            <Image src="./gs-logo.svg" width={40} height={45} alt="logo" />
+          </div>
+          <div className="flex flex-col justify-start items-start">
+            <span className="text-sm">{`This product ${product.action}`}</span>
+            <span className="font-semibold text-xl">{`${product.amount} ${product.type}`}</span>
+          </div>
+        </div>
+      </div>
+      <div className="py-3 w-full">
+        <div className="text-gs-green flex flex-row justify-between items-center group">
+          <span>Link to Public Profile</span>
+          <Checkbox />
         </div>
       </div>
     </div>

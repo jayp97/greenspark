@@ -20,9 +20,10 @@ module.exports = {
         gs: {
           black: "#212121",
           blue: "#2E3A8C",
-          brown: "#F2EBDB",
+          beige: "#F2EBDB",
           gray: "#B0B0B0",
           green: "#3B755F",
+          lightGreen: "#AFC6BD",
           white: "#F9F9F9",
         },
         border: "hsl(var(--border))",
