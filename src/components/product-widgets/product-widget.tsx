@@ -5,55 +5,13 @@ import { cn } from "@/lib/utils";
 import { useEffect, useState } from "react";
 import { Checkbox } from "../ui/checkbox";
 import { Switch } from "../ui/switch";
-import { BadgeColorCheckbox } from "../badge-color-checkbox";
 import GreensparkLogo from "../greenspark-logo";
 import useProductWidgetStore from "@/stores/use-product-widget-store";
 import BadgeColorSelector from "./badge-color-selector";
+import { badgeColorSelector, descriptionMaker } from "@/helpers/product-widget";
 
 type ProductProps = {
   product: Product;
-};
-
-const badgeColorSelector = (color: string) => {
-  switch (color) {
-    case "white":
-      return "bg-gs-white";
-    case "black":
-      return "bg-gs-black";
-    case "green":
-      return "bg-gs-green";
-    case "blue":
-      return "bg-gs-blue";
-    case "beige":
-      return "bg-gs-beige";
-    default:
-      return "bg-gs-white";
-  }
-};
-
-const descriptionMaker = (product: Product) => {
-  switch (product.type) {
-    case "trees":
-      return {
-        partOne: `This product ${product.action}`,
-        partTwo: `${product.amount} trees`,
-      };
-    case "carbon":
-      return {
-        partOne: `This product ${product.action}`,
-        partTwo: `${product.amount}kgs of carbon`,
-      };
-    case "plastic bottles":
-      return {
-        partOne: `This product ${product.action}`,
-        partTwo: `${product.amount} plastic bottles`,
-      };
-    default:
-      return {
-        partOne: `This product ${product.action}`,
-        partTwo: `${product.amount} trees`,
-      };
-  }
 };
 
 export default function ProductWidget({ product }: ProductProps) {
@@ -83,7 +41,7 @@ export default function ProductWidget({ product }: ProductProps) {
     setLinked(!linked);
   };
   return (
-    <div className="">
+    <div>
       <div
         className={cn(
           badgeColorSelector(selectedColor),
