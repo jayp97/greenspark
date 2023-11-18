@@ -29,7 +29,6 @@ const Checkbox = React.forwardRef<
           <Check className="h-4 w-4" />
         </CheckboxPrimitive.Indicator>
       </CheckboxPrimitive.Root>
-      {/* // add a translucent gray circle over the checkbox on hover */}
       <div
         className={cn(
           "absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-8 h-8 flex items-center justify-center pointer-events-none rounded-full bg-gs-lightGreen",

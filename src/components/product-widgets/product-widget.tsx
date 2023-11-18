@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Checkbox } from "../ui/checkbox";
 import { Switch } from "../ui/switch";
+import { BadgeColorCheckbox } from "../badge-color-checkbox";
 
 type ProductProps = {
   product: Product;
@@ -55,7 +56,7 @@ export default function ProductWidget({ product }: ProductProps) {
         </div>
         <div className="text-gs-green flex flex-row justify-between items-center group">
           <span>Badge color</span>
-          <Checkbox />
+          <BadgeColorCheckbox />
         </div>
         <div className="text-gs-green flex flex-row justify-between items-center group">
           <span>Active badge</span>
