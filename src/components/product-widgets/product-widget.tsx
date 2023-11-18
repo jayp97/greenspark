@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Checkbox } from "../ui/checkbox";
 import { Switch } from "../ui/switch";
 import { BadgeColorCheckbox } from "../badge-color-checkbox";
+import GreensparkLogo from "../greenspark-logo";
 
 type ProductProps = {
   product: Product;
@@ -41,7 +42,8 @@ export default function ProductWidget({ product }: ProductProps) {
       >
         <div className="flex flex-row">
           <div className="mr-4">
-            <Image src="./gs-logo.svg" width={40} height={45} alt="logo" />
+            {/* <Image src="./gs-logo.svg" width={40} height={45} alt="logo" /> */}
+            <GreensparkLogo color="white" />
           </div>
           <div className="flex flex-col justify-start items-start">
             <span className="text-sm">{`This product ${product.action}`}</span>
