@@ -30,11 +30,38 @@ const badgeColorSelector = (color: string) => {
   }
 };
 
+const descriptionMaker = (product: Product) => {
+  switch (product.type) {
+    case "trees":
+      return {
+        partOne: `This product ${product.action}`,
+        partTwo: `${product.amount} trees`,
+      };
+    case "carbon":
+      return {
+        partOne: `This product ${product.action}`,
+        partTwo: `${product.amount}kgs of carbon`,
+      };
+    case "plastic bottles":
+      return {
+        partOne: `This product ${product.action}`,
+        partTwo: `${product.amount} plastic bottles`,
+      };
+    default:
+      return {
+        partOne: `This product ${product.action}`,
+        partTwo: `${product.amount} trees`,
+      };
+  }
+};
+
 export default function ProductWidget({ product }: ProductProps) {
   const [color, setColor] = useState(product.selectedColor);
   const [linked, setLinked] = useState(product.linked);
   const activeBadge = useProductWidgetStore((state) => state.activeBadge);
   const setActiveBadge = useProductWidgetStore((state) => state.setActiveBadge);
+
+  const { partOne, partTwo } = descriptionMaker(product);
 
   useEffect(() => {
     setColor(product.selectedColor);
@@ -69,8 +96,8 @@ export default function ProductWidget({ product }: ProductProps) {
             />
           </div>
           <div className="flex flex-col justify-start items-start">
-            <span className="text-sm">{`This product ${product.action}`}</span>
-            <span className="font-semibold text-xl">{`${product.amount} ${product.type}`}</span>
+            <span className="text-sm">{partOne}</span>
+            <span className="font-semibold text-xl">{partTwo}</span>
           </div>
         </div>
       </div>
