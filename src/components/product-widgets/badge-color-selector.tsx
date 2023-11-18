@@ -1,5 +1,5 @@
 import { SelectableColors } from "@/app/models/product";
-import { BadgeColorCheckbox } from "../badge-color-checkbox";
+import { BadgeColorCheckbox } from "./badge-color-checkbox";
 
 type BadgeColorSelectorProps = {
   selectedColor: SelectableColors;
