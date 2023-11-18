@@ -1,3 +1,5 @@
+export type SelectableColors = "white" | "black" | "blue" | "green" | "beige";
+
 export type Product = {
   id: number;
   type: "carbon" | "plastic bottles" | "trees";
@@ -5,5 +7,5 @@ export type Product = {
   action: "collects" | "plants" | "offsets";
   active: boolean;
   linked: boolean;
-  selectedColor: "white" | "black" | "blue" | "green" | "beige";
+  selectedColor: SelectableColors;
 };

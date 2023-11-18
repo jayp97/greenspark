@@ -8,6 +8,7 @@ import { Switch } from "../ui/switch";
 import { BadgeColorCheckbox } from "../badge-color-checkbox";
 import GreensparkLogo from "../greenspark-logo";
 import useProductWidgetStore from "@/stores/use-product-widget-store";
+import BadgeColorSelector from "./badge-color-selector";
 
 type ProductProps = {
   product: Product;
@@ -56,7 +57,7 @@ const descriptionMaker = (product: Product) => {
 };
 
 export default function ProductWidget({ product }: ProductProps) {
-  const [color, setColor] = useState(product.selectedColor);
+  const [selectedColor, setSelectedColor] = useState(product.selectedColor);
   const [linked, setLinked] = useState(product.linked);
   const activeBadge = useProductWidgetStore((state) => state.activeBadge);
   const setActiveBadge = useProductWidgetStore((state) => state.setActiveBadge);
@@ -64,7 +65,7 @@ export default function ProductWidget({ product }: ProductProps) {
   const { partOne, partTwo } = descriptionMaker(product);
 
   useEffect(() => {
-    setColor(product.selectedColor);
+    setSelectedColor(product.selectedColor);
     if (product.active) {
       setActiveBadge(product.type);
     }
@@ -85,14 +86,18 @@ export default function ProductWidget({ product }: ProductProps) {
     <div className="">
       <div
         className={cn(
-          badgeColorSelector(color),
+          badgeColorSelector(selectedColor),
           "text-gs-white rounded-md w-full p-3"
         )}
       >
         <div className="flex flex-row">
           <div className="mr-4">
             <GreensparkLogo
-              color={color === "white" || color === "beige" ? "green" : "white"}
+              color={
+                selectedColor === "white" || selectedColor === "beige"
+                  ? "green"
+                  : "white"
+              }
             />
           </div>
           <div className="flex flex-col justify-start items-start">
@@ -108,7 +113,10 @@ export default function ProductWidget({ product }: ProductProps) {
         </div>
         <div className="text-gs-green flex flex-row justify-between items-center group">
           <span>Badge color</span>
-          <BadgeColorCheckbox />
+          <BadgeColorSelector
+            selectedColor={selectedColor}
+            setSelectedColor={setSelectedColor}
+          />
         </div>
         <div className="text-gs-green flex flex-row justify-between items-center group">
           <span>Active badge</span>
