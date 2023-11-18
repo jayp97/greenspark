@@ -7,6 +7,7 @@ import { Checkbox } from "../ui/checkbox";
 import { Switch } from "../ui/switch";
 import { BadgeColorCheckbox } from "../badge-color-checkbox";
 import GreensparkLogo from "../greenspark-logo";
+import useProductWidgetStore from "@/stores/use-product-widget-store";
 
 type ProductProps = {
   product: Product;
@@ -31,6 +32,16 @@ const badgeColorSelector = (color: string) => {
 
 export default function ProductWidget({ product }: ProductProps) {
   const [color, setColor] = useState(product.selectedColor);
+  const activeBadge = useProductWidgetStore((state) => state.activeBadge);
+  const setActiveBadge = useProductWidgetStore((state) => state.setActiveBadge);
+
+  const onCheckboxChange = () => {
+    if (product.type === activeBadge) {
+      setActiveBadge("");
+      return;
+    }
+    setActiveBadge(product.type);
+  };
   return (
     <div className="">
       <div
@@ -62,7 +73,10 @@ export default function ProductWidget({ product }: ProductProps) {
         </div>
         <div className="text-gs-green flex flex-row justify-between items-center group">
           <span>Active badge</span>
-          <Switch />
+          <Switch
+            checked={product.type === activeBadge}
+            onCheckedChange={onCheckboxChange}
+          />
         </div>
       </div>
     </div>

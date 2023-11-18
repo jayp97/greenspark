@@ -16,3 +16,5 @@ const useProductWidgetStore = create<State & Actions>((set) => ({
   ...initialState,
   setActiveBadge: (badge) => set({ activeBadge: badge }),
 }));
+
+export default useProductWidgetStore;
