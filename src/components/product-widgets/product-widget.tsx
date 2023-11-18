@@ -5,6 +5,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useState } from "react";
 import { Checkbox } from "../ui/checkbox";
+import { Switch } from "../ui/switch";
 
 type ProductProps = {
   product: Product;
@@ -58,7 +59,7 @@ export default function ProductWidget({ product }: ProductProps) {
         </div>
         <div className="text-gs-green flex flex-row justify-between items-center group">
           <span>Active badge</span>
-          {/* <Checkbox /> */}
+          <Switch />
         </div>
       </div>
     </div>
