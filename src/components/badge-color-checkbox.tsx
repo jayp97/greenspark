@@ -20,7 +20,7 @@ const BadgeColorCheckbox = React.forwardRef<
     <CheckboxPrimitive.Root
       ref={ref}
       className={cn(
-        "peer h-4 w-4 shrink-0  disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-2 data-[state=checked]:border-gs-gray data-[state=checked]:text-transparent",
+        "peer h-4 w-4 shrink-0 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:border-2 data-[state=checked]:border-gs-gray data-[state=checked]:text-transparent",
         isHovering
           ? "group-hover:bg-opacity-50 group-hover:border-opacity-10"
           : "",

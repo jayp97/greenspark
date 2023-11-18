@@ -21,13 +21,12 @@ export default function BadgeColorSelector({
   return (
     <div className="flex flex-row gap-2 justify-center items-center">
       {selectableColorsArray.map((color, id) => (
-        <div key={id} className="">
-          <BadgeColorCheckbox
-            color={color}
-            checked={selectedColor === color}
-            onCheckedChange={() => setSelectedColor(color)}
-          />
-        </div>
+        <BadgeColorCheckbox
+          key={id}
+          color={color}
+          checked={selectedColor === color}
+          onCheckedChange={() => setSelectedColor(color)}
+        />
       ))}
     </div>
   );
