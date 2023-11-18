@@ -2,7 +2,6 @@
 
 import { Product } from "@/app/models/product";
 import { cn } from "@/lib/utils";
-import Image from "next/image";
 import { useState } from "react";
 import { Checkbox } from "../ui/checkbox";
 import { Switch } from "../ui/switch";
@@ -42,8 +41,9 @@ export default function ProductWidget({ product }: ProductProps) {
       >
         <div className="flex flex-row">
           <div className="mr-4">
-            {/* <Image src="./gs-logo.svg" width={40} height={45} alt="logo" /> */}
-            <GreensparkLogo color="white" />
+            <GreensparkLogo
+              color={color === "white" || color === "beige" ? "green" : "white"}
+            />
           </div>
           <div className="flex flex-col justify-start items-start">
             <span className="text-sm">{`This product ${product.action}`}</span>
