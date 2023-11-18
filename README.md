@@ -21,3 +21,9 @@ I have also used Zustand as a Redux alternative for state management (for Active
 ## Deployed Version
 
 To check out a live version of the app, please visit: https://greenspark.jaypinion.com/
+
+## Notes
+
+### Tooltip
+
+I have intentionally used a tooltip, instead of a popover, for the info icon for "Link to Public Profile", as the UI designs show a tooltip that is triggered on hover. Therefore, it does not work on mobile properly.
