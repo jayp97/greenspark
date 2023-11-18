@@ -47,10 +47,18 @@ export default function ProductWidget({ product }: ProductProps) {
           </div>
         </div>
       </div>
-      <div className="py-3 w-full">
+      <div className="py-3 w-full grid grid-cols gap-2">
         <div className="text-gs-green flex flex-row justify-between items-center group">
           <span>Link to Public Profile</span>
           <Checkbox />
+        </div>
+        <div className="text-gs-green flex flex-row justify-between items-center group">
+          <span>Badge color</span>
+          <Checkbox />
+        </div>
+        <div className="text-gs-green flex flex-row justify-between items-center group">
+          <span>Active badge</span>
+          {/* <Checkbox /> */}
         </div>
       </div>
     </div>
