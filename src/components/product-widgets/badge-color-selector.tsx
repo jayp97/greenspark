@@ -25,7 +25,7 @@ export default function BadgeColorSelector({
           <BadgeColorCheckbox
             color={color}
             checked={selectedColor === color}
-            onChange={() => setSelectedColor(color)}
+            onCheckedChange={() => setSelectedColor(color)}
           />
         </div>
       ))}

@@ -3,7 +3,7 @@ import { Product, SelectableColors } from "@/app/models/product";
 export const badgeColorSelector = (color: SelectableColors) => {
   switch (color) {
     case "white":
-      return "bg-gs-white";
+      return "bg-white";
     case "black":
       return "bg-gs-black";
     case "green":

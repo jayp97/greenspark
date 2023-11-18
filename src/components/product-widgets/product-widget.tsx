@@ -45,7 +45,10 @@ export default function ProductWidget({ product }: ProductProps) {
       <div
         className={cn(
           badgeColorSelector(selectedColor),
-          "text-gs-white rounded-md w-full p-3"
+          selectedColor === "white" || selectedColor === "beige"
+            ? "text-gs-green"
+            : "text-gs-white",
+          "rounded-md w-full p-3"
         )}
       >
         <div className="flex flex-row">
