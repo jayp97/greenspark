@@ -1,5 +1,9 @@
+import Customiser from "@/components/product-widgets/customiser";
+
 export default function HomePage() {
   return (
-    <div className="bg-red-100 flex items-center justify-center">Home page</div>
+    <div className=" flex items-center justify-center">
+      <Customiser />
+    </div>
   );
 }
