@@ -15,7 +15,7 @@ const BadgeColorCheckbox = React.forwardRef<
     <CheckboxPrimitive.Root
       ref={ref}
       className={cn(
-        "peer h-4 w-4 shrink-0 border-2 bg-gs-blue border-gs-blue  disabled:cursor-not-allowed disabled:opacity-50 group-hover:bg-opacity-50 data-[state=checked]:border-gs-gray data-[state=checked]:text-transparent",
+        "peer h-4 w-4 shrink-0 bg-gs-blue  disabled:cursor-not-allowed disabled:opacity-50 group-hover:bg-opacity-50 group-hover:border-opacity-10 data-[state=checked]:border-2 data-[state=checked]:border-gs-gray data-[state=checked]:text-transparent",
         className
       )}
       onMouseEnter={() => setIsHovering(true)}

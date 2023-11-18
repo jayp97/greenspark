@@ -8,6 +8,10 @@ const cabin = Cabin({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Greenspark",
   description: "Imapct-as-as-service",
+  icons: {
+    icon: "/favicon.ico",
+  },
+  creator: "Jay Pinion",
 };
 
 export default function RootLayout({
