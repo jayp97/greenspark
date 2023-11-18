@@ -16,7 +16,7 @@ I have intentionally not made it pixel-perfect as I wanted to focus on the funct
 
 I have used Next Actions for communcation with the server.
 
-I have also use Zustand as a Redux alternative for state management (Active Badge).
+I have also used Zustand as a Redux alternative for state management (for Active Badge).
 
 ## Deployed Version
 
