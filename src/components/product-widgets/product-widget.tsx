@@ -9,6 +9,8 @@ import GreensparkLogo from "../greenspark-logo";
 import useProductWidgetStore from "@/stores/use-product-widget-store";
 import BadgeColorSelector from "./badge-color-selector";
 import { badgeColorSelector, descriptionMaker } from "@/helpers/product-widget";
+import { Icons } from "@/icons";
+import { Tooltip, TooltipContent, TooltipTrigger } from "../ui/tooltip";
 
 type ProductProps = {
   product: Product;
@@ -69,7 +71,28 @@ export default function ProductWidget({ product }: ProductProps) {
       </div>
       <div className="py-3 w-full grid grid-cols gap-2">
         <div className="text-gs-green flex flex-row justify-between items-center group">
-          <span>Link to Public Profile</span>
+          <div className="flex flex-row justify-start items-start">
+            <span>Link to Public Profile</span>
+            <Tooltip>
+              <TooltipTrigger>
+                <Icons.info className="text-gs-green h-3 w-3 ml-[1px]" />
+              </TooltipTrigger>
+              <TooltipContent className="max-w-[250px] p-6 border-none text-center">
+                <p className="text-gs-black pb-3">
+                  This widget links directly to your public profile so that you
+                  can easily share your impact with your customers. Turn it off
+                  here if you do not want the badge to link to it.
+                </p>
+                <a
+                  className="text-center text-gs-darkGreen font-semibold"
+                  href="#"
+                >
+                  View Public Profile
+                </a>
+              </TooltipContent>
+            </Tooltip>
+          </div>
+
           <Checkbox checked={linked} onCheckedChange={onLinkedChange} />
         </div>
         <div className="text-gs-green flex flex-row justify-between items-center group">

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cabin } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const cabin = Cabin({ subsets: ["latin"] });
 
@@ -27,7 +28,7 @@ export default function RootLayout({
           "max-w-[851px] mx-auto h-screen flex items-center justify-center"
         )}
       >
-        {children}
+        <TooltipProvider delayDuration={200}>{children}</TooltipProvider>
       </body>
     </html>
   );
