@@ -22,6 +22,10 @@ I have also used Zustand as a Redux alternative for state management (for Active
 
 To check out a live version of the app, please visit: https://greenspark.jaypinion.com/
 
+### Storybook
+
+For front-end components, I have used Storybook to develop and test components in isolation. To view the storybook, run `pnpm run storybook` and visit http://localhost:6006/
+
 ## Notes
 
 ### Tooltip

@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import ProductWidget from "@/components/product-widgets/product-widget";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const meta = {
   title: "Example/ProductWidget",
@@ -8,10 +9,19 @@ const meta = {
   parameters: {
     layout: "centered",
   },
-  tags: ["autodocs"],
+  decorators: [
+    (Story) => (
+      <div>
+        <TooltipProvider delayDuration={200}>
+          <Story />
+        </TooltipProvider>
+      </div>
+    ),
+  ],
 } satisfies Meta<typeof ProductWidget>;
 
 export default meta;
+
 type Story = StoryObj<typeof meta>;
 
 export const Primary: Story = {
