@@ -8,7 +8,6 @@ type GreensparkLogoProps = {
 };
 
 const GreensparkLogo: React.FC<GreensparkLogoProps> = ({ color }) => {
-  // Define the CSS classes for white and green colors
   const bgColorClass = cn(
     color === "white" ? "text-gs-white" : "text-gs-green"
   );
