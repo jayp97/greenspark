@@ -24,7 +24,7 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {
+export const PlasticBottles: Story = {
   args: {
     product: {
       id: 1,
@@ -34,6 +34,34 @@ export const Primary: Story = {
       active: true,
       linked: true,
       selectedColor: "green",
+    },
+  },
+};
+
+export const CarbonOffset: Story = {
+  args: {
+    product: {
+      id: 2,
+      type: "carbon",
+      amount: 20,
+      action: "offsets",
+      active: false,
+      linked: false,
+      selectedColor: "blue",
+    },
+  },
+};
+
+export const Trees: Story = {
+  args: {
+    product: {
+      id: 3,
+      type: "trees",
+      amount: 10,
+      action: "plants",
+      active: false,
+      linked: false,
+      selectedColor: "black",
     },
   },
 };
